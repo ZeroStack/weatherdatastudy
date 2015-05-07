@@ -7,8 +7,9 @@ This is the repository for the Australian Weather Study.
 
 ##Files
 
-* [project.Rmd](./report.Rmd): R markdown document.
-* [project.html](./report.html): Compiled html file
+* [report.Rmd](./report.Rmd): R markdown document.
+* [report.html](./report.html): Compiled html file
+* [report.pdf](./report.pdf): PDF report
 * [weather.R](./weather.R): R code to clean data
 * [makereport.R](./makereport.R): R code to make report
 

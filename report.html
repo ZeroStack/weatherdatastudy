@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Which Australian capital city has the best weather?</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<h1>Which Australian capital city has the best weather?</h1>
+
+<p>The following were initial tables and graphs to better understand the data. This is a rough draft; this document was made in quickly without thorough proofreading.</p>
+
+<h2>Heatmap Summary</h2>
+
+<p>A heatmap displaying all relevant variables against the cities. The darker the colour for a particular city, the higher the value in relation to peer cities.</p>
+
+<p>Values were calculated based on a yearly average of all the data.</p>
+
+<p><img src="figure/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+<p>*Note: Adelaide has no data for 3am.Cloud and 9am.Cloud</p>
+
+<p>For instance, Brisbane clearly has the darkest values for most variables. This means in relation to other cities, it had the highest values. Melbourne, on the other hand, had the lowest values for most variables.</p>
+
+<p>\newpage</p>
+
+<h2>Temperature</h2>
+
+<p>Temperature plotted with the Minimum against the Maximum.</p>
+
+<p>Intercepts were added to isolate an ideal minimum temperature range of 20-25 Celcius and maximum temperature range of 25-35.</p>
+
+<p><img src="figure/unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2"> </p>
+
+<p>56 rows containing missing values were removed when plotting this graph.</p>
+
+<p>With this, Brisbane appears to be isolated in the desired region (box created by 4 intercepts). We can further explore this in a density plot to confirm (following page).</p>
+
+<p>\newpage</p>
+
+<p>The density plot is a great way to observe the concentration of data points across a variable.</p>
+
+<p>The average temperature was obtained by calculating the average of Maximum and Minium temperature. This provided a more comprising metric to summarise the data.</p>
+
+<p><img src="figure/unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3"> </p>
+
+<p>Brisbane had the highest minimum and maxiumum temperature. All cities share a similar pattern of temperature density.</p>
+
+<p>\newpage</p>
+
+<p>In order to obersve how irratic the temperature was throughout the year. A difference was determined by subtracting the temperature in the morning (9am) from temperature in the afternoon (3pm).</p>
+
+<p>This difference shows how much the temperature reduced as the day progressed by 6 hours.</p>
+
+<p><img src="figure/unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4"> </p>
+
+<p>57 Rows contain missing values were removed.</p>
+
+<p>Once more, Brisbane appears to show the most desirable temperature, as it has the least change throughout the day (going lower).</p>
+
+<p>\newpage</p>
+
+<h2>Rainfall &amp; Evaporation</h2>
+
+<p>From the bar graph below sums the rainfall for every city throughout the year. It can be observed that Brisbane had the highest amount of rainfall during the year, where as Melbourne had the least.</p>
+
+<p><img src="figure/unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5"> </p>
+
+<p>142 rows containing missing values were removed when plotting this graph.</p>
+
+<p>\newpage</p>
+
+<p>Results from evaporation showed that Brisbane had the highest, and Adelaide had the least.</p>
+
+<p><img src="figure/unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6"> </p>
+
+<p>142 rows containing missing values were removed when plotting this graph.</p>
+
+<p>\newpage</p>
+
+<p>The graph below was an attempt to summarise rain and evaporation by subtracting evaporation from rain. </p>
+
+<p>It was suprising to find that generally the level of evaporation was higher than rainfall as this yielded some negative results. </p>
+
+<p>It was beyond my circle of competence to use this specific metric as an indicator.</p>
+
+<p>Colours indiciate a different month.</p>
+
+<p><img src="figure/unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7"> </p>
+
+<p>51 rows contained missing values were removed when plotting this graph.</p>
+
+<p>\newpage</p>
+
+<h2>Sunshine Hours</h2>
+
+<p>The graph below shows the density of sunshine hours throughout the year.</p>
+
+<p>It can be observed that Perth has the highest density of the most sunshine hours.</p>
+
+<p><img src="figure/unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8"> </p>
+
+<p>\newpage</p>
+
+<h2>Relative Humidity</h2>
+
+<p>The humidity indiciator was calculated by getting the average of relative humidity at 9am and 3pm.</p>
+
+<p><img src="figure/unnamed-chunk-9-1.png" alt="plot of chunk unnamed-chunk-9"> </p>
+
+<p>54 Rows were removed when plotting this graphs.</p>
+
+<p>\newpage</p>
+
+<h2>Cloud Amount</h2>
+
+<p>The cloud amount metric was calculated by getting the average of oktas at 9am and 3pm.</p>
+
+<p>Adelaide had no data, and Perth had the lowest cloud amount.</p>
+
+<p><img src="figure/unnamed-chunk-10-1.png" alt="plot of chunk unnamed-chunk-10"> </p>
+
+</body>
+
+</html>
